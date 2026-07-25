@@ -1,0 +1,27 @@
+# =========================================================
+# Order Tracking System - Application Configuration
+# =========================================================
+
+spring:
+  application:
+    name: order-tracking-system
+
+  data:
+   mongodb:
+      uri: mongodb+srv://prasanthdp352_db_user:Prasanth03@cluster0.5rl7kgc.mongodb.net/order_tracking_db?retryWrites=true&w=majority&appName=Cluster0
+  jackson:
+    # Return dates in ISO-8601 format instead of timestamps
+    serialization:
+      write-dates-as-timestamps: false
+
+server:
+  port: ${SERVER_PORT:8080}
+
+# -----------------------------------------------------------
+# Logging configuration (helpful for beginners while debugging)
+# -----------------------------------------------------------
+logging:
+  level:
+    root: INFO
+    com.example.ordertracking: DEBUG
+    org.springframework.data.mongodb.core.MongoTemplate: INFO
